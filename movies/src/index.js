@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import './common/common.css'
 //引入bootstarp
 import 'bootstrap/dist/css/bootstrap.css'
-
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 
 

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { getGenres } from '../services/fakeGenreService';
 import { getMovies } from '../services/fakeMovieService';
 import GenresList from '../components/GenresList'
+import MoviesTable from '../components/MoviesTable';
 
 class Movies extends PureComponent {
     constructor(props) {
@@ -30,7 +31,9 @@ class Movies extends PureComponent {
                             selectedGenre={selectedGenre}
                         />
                     </div>
-                    <div className='col'>表格</div>
+                    <div className='col'>
+                        <MoviesTable movies={movies} />
+                    </div>
                 </div>
             </div>
         );
