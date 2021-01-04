@@ -2,7 +2,7 @@ import React from 'react'
 import TableBody from './TableBody';
 import TableHead from './TableHead';
 import Like from './Like'
-const MoviesTable = ({ movies }) => {
+const MoviesTable = ({ likeClick, movies }) => {
     const columns = [
         {
             path: "title",
@@ -15,12 +15,19 @@ const MoviesTable = ({ movies }) => {
         },
         { path: "original_title", label: "原标题" },
         { path: "year", label: "上映时间" },
-        { path: "genres", label: "分类" },
+        {
+            path: "genres", label: "分类",
+            content: (movie) => movie.genres.join('/')
+        },
         { path: "rating.average", label: "评分" },
         {
             key: "like",
             label: "收藏",
-            content: (movie) => <Like />,
+            content: (movie) => <Like
+                doClick={(movie) => { likeClick(movie) }}
+                movie={movie}
+
+            />,
         },
     ];
 
